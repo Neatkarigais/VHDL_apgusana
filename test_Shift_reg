@@ -29,7 +29,7 @@ architecture test of test_Shift_reg is
 			clk <= not clk;
 		end process clk_stimulus;
 		
-		data_stimulus: process;
+		data_stimulus: process
 			wait for 40 ns;
 			data <= not data_in;
 			wait for 150 ns;
