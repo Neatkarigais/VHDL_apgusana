@@ -68,3 +68,44 @@ Attēlā ir redzami sekojoši procesi: sig_E tiek piešķirta vērtība 0, sig_F
 
 Attēlā ir redzami sekojoši procesi: sig_I ir 8 bitu veselais skaitlis (jo range ir 0 līdz 255), kuram vērtība ir 0, sig_J ir tas pats 8 bitu skaitlis, bet ar vērtību 5, sig_I ir vienāds ar 4, sig_I ir vienāds sig_J plus 5.
 
+## When-else izteikumi
+
+Piemērs: signal_name <= expression_1 when condition_1 else expression_2
+
+signal_name <= expression_1 when condition_1 else
+               expression_2 when condition_2 else
+               condition_3;
+
+## Concurrent vs Sequential izteikumi
+
+Konkurentie iZteikumi ir, piemēram, signal assignment (process, case statement, etc.), kā arī process statement (var rearrangot procesu). Tiem procesu kārtībai nav nozīmes.
+
+Sequential izteikumi ir: if(infer priority) un case(equal priority). Šiem jābūt procesos. Tie ir tie, kuros procesu izpilde ir nozīmīga.
+
+# VHDL simulācija
+
+## Shift reģistra dizains
+
+![image](https://github.com/Neatkarigais/VHDL_apgusana/assets/136509322/e82175d1-b236-4beb-a1e4-a1dfb5780307)
+
+Skatīt Shift_reg.vhd pilno kodu.
+
+## Shift reģistra testbench kods
+
+![image](https://github.com/Neatkarigais/VHDL_apgusana/assets/136509322/486f302c-77da-4f0b-83a2-1b2dfba06395)
+
+Skatīt test_Shift_reg.vhd kodu.
+
+## Shift reģistra TCL fails
+
+Skatīt Shift_reg.tcl kodu.
+
+## ModelSim palaišana
+
+Jāpalaiž ModelSim. Jaizvēlas _File/Change directory..._ un jāizvēlas lokācija, kur ir VHDL un TESTBENCH faili. Pēc kā spiež _File/New/Library_ un uzklikšķina uz _a new library and a logical maping to it_. Kad tas ir izdarīts, nepieciešams kompilēt failu caur _Compile/Compile.._, kur vajag ieķeksēt abus failus. Ja ar abiem failiem viss ir labi, tad tālāk nepieciešams tos simulēt caur _Simulate/Start simulation.._. Tālāk jāpievieno signāli no faila caur _Add wave_, pēc kā var palaist _Run_.
+
+## ModelSim palaišana caur TCL
+
+Šim nolūkam nepieciešams ir jāizvēlas directory, kur visi faili ir, pēc kā jāspiež _Tools/Tcl/Execute Macro..._. Tādējādi viss process ir automatizēts.
+
+
