@@ -12,7 +12,7 @@ USE IEEE.NUMERIC_STD.ALL;
 
 -- Entity
 
-entity Shift_Reg is
+entity Shift_reg is
 port(
 	A 		: out std_logic;
 	B 		: out std_logic;
@@ -21,11 +21,11 @@ port(
 	data_in : in  std_logic;
 	clk		: in  std_logic;
 	reset   : in  std_logic);
-end Shift_Reg;
+end Shift_reg;
 
 -- architecture
 
-architecture behavior of Shift_Reg is
+architecture behavior of Shift_reg is
 -- Defined signals
 signal reg_A, reg_B, reg_C, reg_D : std_logic := '0';
 -- Begin architecture
