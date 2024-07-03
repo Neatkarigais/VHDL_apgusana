@@ -30,6 +30,7 @@ architecture test of test_Shift_reg is
 		end process clk_stimulus;
 		
 		data_stimulus: process
+		begin
 			wait for 40 ns;
 			data <= not data_in;
 			wait for 150 ns;
