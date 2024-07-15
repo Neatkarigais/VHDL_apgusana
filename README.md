@@ -108,4 +108,61 @@ Jāpalaiž ModelSim. Jaizvēlas _File/Change directory..._ un jāizvēlas lokāc
 
 Šim nolūkam nepieciešams ir jāizvēlas directory, kur visi faili ir, pēc kā jāspiež _Tools/Tcl/Execute Macro..._. Tādējādi viss process ir automatizēts.
 
+# VHDL koda implementācija uz DE10 Standard
+
+## LED un pogu programmas kods
+
+![image](https://github.com/user-attachments/assets/fa2a0c00-a5a1-45b0-9e2d-e1ad8742cbe9)
+
+## Pinu pievienošana
+
+Lai pievienotu pinus, nepieciešams ieiet _Assignments/Pin planner_, kur var ieraudzīt kopējo Altera pinu izvietojumu karti. Lai pievienotu attiecīgos pinus, nepieciešams sekot līdzi DE10-Standard instrukcijai.
+
+![image](https://github.com/user-attachments/assets/57f35fda-182f-46d1-85fb-983251d66fe4)
+
+## Programmējamā faila izveide
+
+Vispirms nepieciešams veikt kopējo kompilēšanu. Kad ir veiksmīgi noritējusi kompilācija, tiks izveidots .sof fails, kuru nepieciešams ielādēt iekš FPGA.
+
+![image](https://github.com/user-attachments/assets/380e18d7-443b-4793-8da0-b95daec4cb57)
+
+## Reāla FPGA ieprogrammēšana
+
+![image](https://github.com/user-attachments/assets/c407498f-1f03-453a-89a6-56135fbb7e9b)
+
+No sākuma nepieciešams atrast USB-Blaster iekārtas ieprogrammēšanai. Ja nav USB-Blaster, nepieciešams ielādēt. Tad nepieciešams Auto detectot procesoru, kuram piešķiram pirmo izvēlēto modeli. Tad šo pašu procesoru pārregulējam uz iepriekš ieprogrammēto .sof failu. Tad var uzspiest _Start_, pēc kā FPGA tiek ieprogrammēts.
+
+# VHDL dizaina koncepti
+
+## Signāli un konstantes
+
+Konstante - konstants skaitlis, kas netiks mainīts procesa laikā. Signāls - iekšējais shēmas signāls.
+
+![image](https://github.com/user-attachments/assets/b479c08b-6e6b-4813-a16e-f97db3421888)
+
+## Process
+
+Vienība, kas ļauj veicināt procesu ar kādu noteicošo argumentu.
+
+![image](https://github.com/user-attachments/assets/514937f5-f0bb-4913-8eb5-5a9cbba0f0e0)
+
+## IF apgalvojums
+
+Process norisinās, ja izteiktais apgalvojums ir patiess. Ja nav, tad norisinās cits apgalvojums.
+
+![image](https://github.com/user-attachments/assets/56123ca9-b40f-447d-9c38-2ed0c3b036c2)
+
+## IF apgalvojumu prioritātes piešķiršana
+
+Tas apgalvojums, kas atrodas hierarhijas augšā, tas tiek prioritizēts, tas ir, citi apgalvojumi nestrādās, ja augšējais būs spēkā esošs.
+
+![image](https://github.com/user-attachments/assets/e219079c-3ed2-4844-accc-d360ddc19da3)
+
+![image](https://github.com/user-attachments/assets/53574270-01a0-4eb5-9c07-5439263f9669)
+
+
+
+
+
+
 
