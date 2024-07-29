@@ -160,6 +160,23 @@ Tas apgalvojums, kas atrodas hierarhijas augšā, tas tiek prioritizēts, tas ir
 
 ![image](https://github.com/user-attachments/assets/53574270-01a0-4eb5-9c07-5439263f9669)
 
+# Blinky LED projekts
+## Darbības apraksts
+
+_Blinky LED_ projekta darbība ir sekojoša: divas lielās komponentes, kuras ir _counter_ un _LED_. Pie katra takts signāla kāpošās frontes tiek pieskaitīts 1, taču, ja _reset_ ir aktīvs vai _counter_ ir sasniedzis MAX_VALUE, tad _counter_ ir sasniedzis 0. Katru reizi, kad _counter_ ir sasniedzis MAX_VALUE, LED mainās uz pretējo stāvokli.
+Projektā mirdzēšanas gaitu nosaka divas frekvences (takts signāla frekvence un mirdzēšanas frekvence). Parametri tiek rēķināti šādi:
+
+MAX_VALUE = CLK_RATE/LED_RATE; - cik daudz takts signāla taktis vajag vienam stāvoklim;
+BIT_DEPTH = ceil(log2c(real(MAX_VALUE)); - MAX_VALUE skaitītāja reģistra lielums;
+count_reg : in std_logic_vector(BIT_DEPTH - 1) := (others => '0');
+
+## Programmas kods
+
+![image](https://github.com/user-attachments/assets/ea2dd802-76ad-4ef6-bb1f-3e005c66e9e3)
+
+## Rezultāts
+
+LED tiek mirdzēti ar 2 Hz frekvenci. Kad tiek turēta poga, process apstājās.
 
 
 
